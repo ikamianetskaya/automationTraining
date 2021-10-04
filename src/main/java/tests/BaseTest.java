@@ -14,12 +14,12 @@ public class BaseTest {
 
     public WebDriver initializeDriver() throws IOException {
 
-        String browerName = getProperty("browser");
+        String browserName = getProperty("browser");
 
-        if (browerName.equals("chrome")) {
+        if (browserName.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\chromedriver.exe");
             driver = new ChromeDriver();
-        } else if (browerName.equals("edge")) {
+        } else if (browserName.equals("edge")) {
             System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\msedge.exe");
             driver = new EdgeDriver();
         }

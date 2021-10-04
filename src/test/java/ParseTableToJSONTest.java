@@ -1,4 +1,5 @@
 import org.json.JSONException;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import pages.JiraTicketPage;
 import pages.LoginPage;
@@ -15,5 +16,9 @@ public class ParseTableToJSONTest extends BaseTest {
         LoginPage loginPage = new LoginPage(this.driver);
         JiraTicketPage jiraTicketPage = loginPage.login(getProperty("jiraUser"), getProperty("jiraPassword"));
         jiraTicketPage.saveTableToToJSON();
+    }
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+       driver.quit();
     }
 }

@@ -19,7 +19,6 @@ public class LoginPage {
         driver.findElement(continueButton).click();
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(continueButton).click();
-        JiraTicketPage jiraTicketPage = new JiraTicketPage(driver);
-        return jiraTicketPage;
+        return new JiraTicketPage(driver);
     }
 }
